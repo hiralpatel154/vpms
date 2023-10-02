@@ -1,0 +1,429 @@
+// common styling
+* {
+    font-family: cursive;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    margin-bottom: 0;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+// Background Image Styling
+body.bg-img {
+    background-size: auto;
+    background: url("../images/parking.jpg");
+    background-color: transparent;
+    background-repeat: no-repeat;
+}
+
+.wrapper {
+    min-height: 100vh;
+    background-size: cover;
+    background-repeat: repeat;
+}
+
+.inner {
+    background: #fff;
+    border-radius: 5px;
+    padding: 20px;
+    margin: auto;
+}
+
+// Common form styling
+
+form {
+    background: #fff;
+    border-radius: 5px;
+
+    .input-box {
+        .icon-box {
+            right: 15px;
+
+            &::before {
+                position: absolute;
+                content: "";
+                height: 38px;
+                background-color: #ced4da;
+                width: 1px;
+                right: 38px;
+            }
+
+            .icon {
+                background-color: #e1e4e7;
+                height: 38px;
+                width: 38px;
+                display: flex;
+                align-items: center;
+                border-right: 17px;
+                border-top-right-radius: 4px;
+                border-bottom-right-radius: 4px;
+                justify-content: center;
+            }
+        }
+    }
+}
+
+.btn-close {
+    padding: 0 0;
+    width: 15px;
+    height: 15px;
+}
+
+// Login Page Styling
+.login {
+    width: 18rem;
+}
+
+// Registeration Page
+.inner {
+    margin: 20px;
+}
+
+
+/********************************* Sidebar and Navbar Styling ********************************/
+#nav-toggle {
+    display: none;
+}
+#nav-toggle:checked+.sidebar {
+    width: 80px;
+}
+
+#nav-toggle:checked+.sidebar .link-name,
+#nav-toggle:checked+.sidebar .logo_name
+ {
+    display: none;
+}
+
+#nav-toggle:checked~.home-section {
+    margin-left: 80px;
+}
+
+#nav-toggle:checked~.home-section .home-content {
+    width: calc(100% - 80px);
+}
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 280px;
+    background: #48474c;
+
+    .logo-details {
+        height: 60px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+
+        i {
+            font-size: 30px;
+            color: #fff;
+            padding: 10px;
+        }
+
+        .logo_name {
+            font-size: 20px;
+            color: #fff;
+            font-weight: 500;
+        }
+    }
+
+    .logged-in-user {
+        .user-img {
+            width: 35px;
+            margin: 10px;
+        }
+    }
+
+    .nav-links {
+        height: 100%;
+        overflow: auto;
+
+        i {
+            font-size: 20px;
+            color: #ddd;
+            padding: 15px;
+
+            &.fa-angle-left {
+                font-size: 15px;
+            }
+        }
+
+        li {
+            transition: all 0.4s ease;
+
+            &:hover {
+                background: #1d1d1e57;
+                cursor: pointer;
+            }
+
+            &.active {
+                background-color: #007fff;
+            }
+
+            .sub-menu {
+                background: #1111129e;
+                display: none;
+                padding: 20px 0 20px 20px;
+
+                li {
+                    a {
+                        color: #ddd;
+                        white-space: nowrap;
+                    }
+
+                    i {
+                        font-size: 15px;
+                        padding: 10px;
+                    }
+
+                    &.active {
+                        border-top-left-radius: 20px;
+                        color: #000;
+                        background: #fff;
+                        border-bottom-left-radius: 20px;
+                        margin-top: 5px;
+
+                        a {
+                            color: #000;
+                        }
+
+                    }
+                }
+
+                &.padding {
+                    padding-top: 5px;
+                }
+
+                .link_name {
+                    display: none;
+                }
+
+                &.showMenu {
+                    display: block;
+                }
+            }
+
+            &.arrow {
+                transition: all 0.3s ease;
+            }
+
+            .rotate {
+                transform: rotate(180deg);
+                padding: 15px 15px 15px 5px;
+            }
+
+            .icon-link {
+                &.bg-color {
+                    background: #007fff;
+                }
+            }
+
+
+        }
+
+        .hidden-link {
+            display: none !important;
+        }
+    }
+
+    .hr-css {
+        color: #fff;
+
+    }
+
+    .link-name {
+        color: #ddd;
+    }
+
+    &.close {
+        .nav-links {
+            overflow: visible;
+
+            li {
+                position: relative;
+
+                .sub-menu {
+                    position: absolute;
+                    left: 100%;
+                    top: -10px;
+                    margin-top: 0;
+                    padding: 10px 20px;
+                    border-radius: 0 6px 6px 0;
+                    transition: all 0.4s ease;
+                }
+            }
+        }
+
+        &~.home-section {
+            left: 45px;
+            width: calc(100% - 45px);
+        }
+    }
+}
+
+
+//   Home Section
+
+.home-section {
+    background: #fff;
+    margin-left: 280px;
+    width: calc(100% - 280px);
+    height: 100vh;
+    transition: all 0.5s ease;
+
+    .home-content {
+        height: 60px;
+        display: flex;
+        align-items: center;
+        background-color: rgb(208, 74, 74);
+        width: 100%;
+        z-index: 1;
+
+        .menu-bar {
+            margin: 10px 15px;
+            font-size: 25px;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+
+    .content-box {
+        padding: 20px;
+        height: 100vh;
+        overflow-y: scroll;
+    }
+
+}
+
+.card-box {
+    margin-top: 20px;
+    .card {
+        margin: 0 5px;
+        position: relative;
+        transition: 3s ease;
+
+        &:hover{
+            box-shadow: 0 0.5rem 1rem #00000073;
+        }
+
+        &:first-child {
+            margin-left: 0;
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        .card-title {
+            color: #fff;
+        }
+
+        .card-text {
+            color: #fff;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        .list-group-item {
+            color: #fff;
+            text-align: center;
+            padding: 2px;
+        }
+
+        .icon-box {
+            position: absolute;
+            right: 16px;
+            top: 8px;
+            font-size: 55px;
+            opacity: 0.3;
+        }
+
+        &.booking {
+            background: #17A2B8;
+
+            .list-group-item {
+                background: #1591A5;
+            }
+        }
+
+        &.parking {
+            background: #28A745;
+
+            .list-group-item {
+                background: #24963E;
+            }
+        }
+
+        &.vehicle {
+            background: #007BFF;
+
+            .list-group-item {
+                background: #006EE5;
+            }
+        }
+
+        &.owner {
+            background: #17A2B8;
+
+            .list-group-item {
+                background: #1591A5;
+            }
+        }
+
+        .info-icon {
+            background: #fff;
+            color: #1591A5;
+            border-radius: 50%;
+            font-size: 12px;
+            padding: 2px;
+            margin-left: 6px;
+            height: 16px;
+            width: 16px;
+        }
+    }
+
+    .booking {}
+}
+
+// Media Queries
+@media only screen and (max-width: 768px) {
+
+    // Registeration Page
+    .inner {
+        display: block;
+        margin: 30px;
+    }
+}
+
+@media only screen and (min-width:2500px) {
+    body {
+        background-size: 100% 100%;
+
+    }
+}

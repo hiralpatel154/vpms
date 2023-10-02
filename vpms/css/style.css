@@ -1,0 +1,346 @@
+* {
+  font-family: cursive;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  margin-bottom: 0;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body.bg-img {
+  background-size: auto;
+  background: url("../images/parking.jpg");
+  background-color: transparent;
+  background-repeat: no-repeat;
+}
+
+.wrapper {
+  min-height: 100vh;
+  background-size: cover;
+  background-repeat: repeat;
+}
+
+.inner {
+  background: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  margin: auto;
+}
+
+form {
+  background: #fff;
+  border-radius: 5px;
+}
+form .input-box .icon-box {
+  right: 15px;
+}
+form .input-box .icon-box::before {
+  position: absolute;
+  content: "";
+  height: 38px;
+  background-color: #ced4da;
+  width: 1px;
+  right: 38px;
+}
+form .input-box .icon-box .icon {
+  background-color: #e1e4e7;
+  height: 38px;
+  width: 38px;
+  display: flex;
+  align-items: center;
+  border-right: 17px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  justify-content: center;
+}
+
+.btn-close {
+  padding: 0 0;
+  width: 15px;
+  height: 15px;
+}
+
+.login {
+  width: 18rem;
+}
+
+.inner {
+  margin: 20px;
+}
+
+/********************************* Sidebar and Navbar Styling ********************************/
+#nav-toggle {
+  display: none;
+}
+
+#nav-toggle:checked + .sidebar {
+  width: 80px;
+}
+
+#nav-toggle:checked + .sidebar .link-name,
+#nav-toggle:checked + .sidebar .logo_name {
+  display: none;
+}
+
+#nav-toggle:checked ~ .home-section {
+  margin-left: 80px;
+}
+
+#nav-toggle:checked ~ .home-section .home-content {
+  width: calc(100% - 80px);
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 280px;
+  background: #48474c;
+}
+.sidebar .logo-details {
+  height: 60px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.sidebar .logo-details i {
+  font-size: 30px;
+  color: #fff;
+  padding: 10px;
+}
+.sidebar .logo-details .logo_name {
+  font-size: 20px;
+  color: #fff;
+  font-weight: 500;
+}
+.sidebar .logged-in-user .user-img {
+  width: 35px;
+  margin: 10px;
+}
+.sidebar .nav-links {
+  height: 100%;
+  overflow: auto;
+}
+.sidebar .nav-links i {
+  font-size: 20px;
+  color: #ddd;
+  padding: 15px;
+}
+.sidebar .nav-links i.fa-angle-left {
+  font-size: 15px;
+}
+.sidebar .nav-links li {
+  transition: all 0.4s ease;
+}
+.sidebar .nav-links li:hover {
+  background: rgba(29, 29, 30, 0.3411764706);
+  cursor: pointer;
+}
+.sidebar .nav-links li.active {
+  background-color: #007fff;
+}
+.sidebar .nav-links li .sub-menu {
+  background: rgba(17, 17, 18, 0.6196078431);
+  display: none;
+  padding: 20px 0 20px 20px;
+}
+.sidebar .nav-links li .sub-menu li a {
+  color: #ddd;
+  white-space: nowrap;
+}
+.sidebar .nav-links li .sub-menu li i {
+  font-size: 15px;
+  padding: 10px;
+}
+.sidebar .nav-links li .sub-menu li.active {
+  border-top-left-radius: 20px;
+  color: #000;
+  background: #fff;
+  border-bottom-left-radius: 20px;
+  margin-top: 5px;
+}
+.sidebar .nav-links li .sub-menu li.active a {
+  color: #000;
+}
+.sidebar .nav-links li .sub-menu.padding {
+  padding-top: 5px;
+}
+.sidebar .nav-links li .sub-menu .link_name {
+  display: none;
+}
+.sidebar .nav-links li .sub-menu.showMenu {
+  display: block;
+}
+.sidebar .nav-links li.arrow {
+  transition: all 0.3s ease;
+}
+.sidebar .nav-links li .rotate {
+  transform: rotate(180deg);
+  padding: 15px 15px 15px 5px;
+}
+.sidebar .nav-links li .icon-link.bg-color {
+  background: #007fff;
+}
+.sidebar .nav-links .hidden-link {
+  display: none !important;
+}
+.sidebar .hr-css {
+  color: #fff;
+}
+.sidebar .link-name {
+  color: #ddd;
+}
+.sidebar.close .nav-links {
+  overflow: visible;
+}
+.sidebar.close .nav-links li {
+  position: relative;
+}
+.sidebar.close .nav-links li .sub-menu {
+  position: absolute;
+  left: 100%;
+  top: -10px;
+  margin-top: 0;
+  padding: 10px 20px;
+  border-radius: 0 6px 6px 0;
+  transition: all 0.4s ease;
+}
+.sidebar.close ~ .home-section {
+  left: 45px;
+  width: calc(100% - 45px);
+}
+
+.home-section {
+  background: #fff;
+  margin-left: 280px;
+  width: calc(100% - 280px);
+  height: 100vh;
+  transition: all 0.5s ease;
+}
+.home-section .home-content {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  background-color: rgb(208, 74, 74);
+  width: 100%;
+  z-index: 1;
+}
+.home-section .home-content .menu-bar {
+  margin: 10px 15px;
+  font-size: 25px;
+}
+.home-section .home-content .menu-bar:hover {
+  cursor: pointer;
+}
+.home-section .content-box {
+  padding: 20px;
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+.card-box {
+  margin-top: 20px;
+}
+.card-box .card {
+  margin: 0 5px;
+  position: relative;
+  transition: 3s ease;
+}
+.card-box .card:hover {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.4509803922);
+}
+.card-box .card:first-child {
+  margin-left: 0;
+}
+.card-box .card:last-child {
+  margin-right: 0;
+}
+.card-box .card .card-title {
+  color: #fff;
+}
+.card-box .card .card-text {
+  color: #fff;
+  margin-top: 10px;
+  font-size: 14px;
+}
+.card-box .card .list-group-item {
+  color: #fff;
+  text-align: center;
+  padding: 2px;
+}
+.card-box .card .icon-box {
+  position: absolute;
+  right: 16px;
+  top: 8px;
+  font-size: 55px;
+  opacity: 0.3;
+}
+.card-box .card.booking {
+  background: #17A2B8;
+}
+.card-box .card.booking .list-group-item {
+  background: #1591A5;
+}
+.card-box .card.parking {
+  background: #28A745;
+}
+.card-box .card.parking .list-group-item {
+  background: #24963E;
+}
+.card-box .card.vehicle {
+  background: #007BFF;
+}
+.card-box .card.vehicle .list-group-item {
+  background: #006EE5;
+}
+.card-box .card.owner {
+  background: #17A2B8;
+}
+.card-box .card.owner .list-group-item {
+  background: #1591A5;
+}
+.card-box .card .info-icon {
+  background: #fff;
+  color: #1591A5;
+  border-radius: 50%;
+  font-size: 12px;
+  padding: 2px;
+  margin-left: 6px;
+  height: 16px;
+  width: 16px;
+}
+@media only screen and (max-width: 768px) {
+  .inner {
+    display: block;
+    margin: 30px;
+  }
+}
+@media only screen and (min-width: 2500px) {
+  body {
+    background-size: 100% 100%;
+  }
+}/*# sourceMappingURL=style.css.map */
